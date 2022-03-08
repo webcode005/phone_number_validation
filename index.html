@@ -1,0 +1,22 @@
+<script>
+ function checkNumber(val,evt)
+  {
+    var charCode = (evt.which) ? evt.which : event.keyCode;
+    
+    if (charCode> 31 && (charCode < 48 || charCode > 57) )
+        {            
+            return false;
+        }
+        if(val.length>10)
+        {
+            return false;
+        }
+    return true;
+}
+</script>
+
+<form action="avc">
+    
+    <input type="text" name="Contact_No" value="" pattern="[2-9]{1}[0-9]{9}" maxlength="10" onkeypress="return checkNumber(this.value,event)" placeholder="Mobile Number" required="">
+    <input type="submit" value="Submit">
+</form>
